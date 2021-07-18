@@ -76,7 +76,14 @@
     return payload
   };
 
-  function useSign(options) {
+  /**
+   *
+   * @param {Object} options
+   * @param {string} options.secret
+   *
+   * @returns interceptor
+   */
+  function useSign(options = {}) {
     return function interceptor(config) {
       const { method, params, data } = config;
 
