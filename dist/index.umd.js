@@ -1,8 +1,8 @@
 (function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('crypto-js/md5')) :
-  typeof define === 'function' && define.amd ? define(['exports', 'crypto-js/md5'], factory) :
-  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.useSign = {}, global.md5));
-}(this, (function (exports, md5) { 'use strict';
+  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('crypto-js/md5')) :
+  typeof define === 'function' && define.amd ? define(['crypto-js/md5'], factory) :
+  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.useSign = factory(global.md5));
+}(this, (function (md5) { 'use strict';
 
   function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
@@ -108,8 +108,6 @@
     }
   }
 
-  exports.useSign = useSign;
-
-  Object.defineProperty(exports, '__esModule', { value: true });
+  return useSign;
 
 })));

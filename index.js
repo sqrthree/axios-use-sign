@@ -68,7 +68,7 @@ const signData = function signData(secret, data) {
   return payload
 }
 
-export function useSign(options) {
+export default function useSign(options) {
   return function interceptor(config) {
     const { method, params, data } = config
 
