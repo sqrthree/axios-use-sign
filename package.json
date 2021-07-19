@@ -1,5 +1,5 @@
 {
-  "name": "axios-use-sign",
+  "name": "@sqrtthree/axios-use-sign",
   "version": "0.1.0",
   "description": "A sign interceptor for axios.",
   "main": "dist/index.umd.js",
