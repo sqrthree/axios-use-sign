@@ -86,7 +86,6 @@
   function useSign(options = {}) {
     return function interceptor(config) {
       const { method, params, data } = config;
-
       const { secret } = options;
 
       if (!secret) {
