@@ -18,7 +18,7 @@ const mockAdapter = (config) => {
       status: 200,
       statusText: 'OK',
       headers: config.headers,
-      config: config,
+      config,
       request: null,
     }
 

@@ -38,15 +38,13 @@
       const value = data[key];
       const empty = isEmpty(value);
 
-      if (empty) {
-        continue
-      }
+      if (!empty) {
+        if (result) {
+          result += '&';
+        }
 
-      if (result) {
-        result += '&';
+        result += `${key}=${value}`;
       }
-
-      result += `${key}=${value}`;
     }
 
     return result
@@ -62,13 +60,15 @@
   const signData = function signData(secret, data) {
     const timestamp = Date.now();
     const nonce = randomString(32);
-    const payload = Object.assign({}, data, {
+    const payload = {
+      ...data,
       timestamp,
       nonce,
-    });
-    const payloadWithSecret = Object.assign({}, payload, {
+    };
+    const payloadWithSecret = {
+      ...payload,
       secret,
-    });
+    };
     const signature = sign(payloadWithSecret);
 
     payload.signature = signature;
